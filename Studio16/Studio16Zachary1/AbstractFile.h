@@ -10,4 +10,5 @@ public:
 	virtual int append(vector<char> myVec) = 0;
 	virtual unsigned int getSize() = 0;
 	virtual string getName() = 0;
+	static AbstractFile* createFile(std::string type, std::string name);
 };

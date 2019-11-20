@@ -3,17 +3,53 @@
 
 #include <iostream>
 #include "TextFile.h"
+#include "AbstractFile.h"
 
 int main()
 {
-	vector<char> goodVec;
-	goodVec.push_back('a');
-	goodVec.push_back('b');
-	goodVec.push_back('c');
+	/* AbstractFile* myAF = AbstractFile::createFile("TextFile", "newfile.txt");
+	vector<char> textVec;
+	textVec.push_back('a');
+	textVec.push_back('b');
+	textVec.push_back('c'); */
 
-	TextFile myTF("Cool File");
-	myTF.write(goodVec);
-	myTF.read();
+	/* vector<int> intVec;
+	intVec.push_back(1);
+	intVec.push_back(2);
+	intVec.push_back(3); */
+
+	/* // TextFile myTF("Char File");
+	myAF->write(textVec);
+	myAF->read(); */
+
+	/* TextFile myTF("Int File");
+	myTF.write(intVec);
+	myTF.read(); */
+
+	// ----------------- Studio 17 below -------------------------
+
+	AbstractFile* myAF = AbstractFile::createFile("ImageFile", "newfile.txt");
+	vector<char> imageVec;
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back('O');
+	imageVec.push_back(2);
+	/*
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back(3);
+	*/
+
+	cout << "Our write function returned a value of " << myAF->write(imageVec) << endl;
+	cout << "Our getSize function returned a value of " << myAF->getSize() << endl;
+	cout << "Our getName function returned a value of " << myAF->getName() << endl;
+	cout << "Our read function printed out" << endl;
+	myAF->read();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
