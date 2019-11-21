@@ -4,6 +4,7 @@
 #include <iostream>
 #include "TextFile.h"
 #include "AbstractFile.h"
+#include "SimpleFileSystem.h"
 
 int main()
 {
@@ -28,6 +29,7 @@ int main()
 
 	// ----------------- Studio 17 below -------------------------
 
+	/*
 	AbstractFile* myAF = AbstractFile::createFile("ImageFile", "newfile.txt");
 	vector<char> imageVec;
 	imageVec.push_back('X');
@@ -35,6 +37,7 @@ int main()
 	imageVec.push_back('X');
 	imageVec.push_back('O');
 	imageVec.push_back(2);
+	*/
 	/*
 	imageVec.push_back('X');
 	imageVec.push_back(' ');
@@ -43,13 +46,47 @@ int main()
 	imageVec.push_back('X');
 	imageVec.push_back(3);
 	*/
-
+	/*
 	cout << "Our write function returned a value of " << myAF->write(imageVec) << endl;
 	cout << "Our getSize function returned a value of " << myAF->getSize() << endl;
 	cout << "Our getName function returned a value of " << myAF->getName() << endl;
 	cout << "Our read function printed out" << endl;
 	myAF->read();
+	*/
+	
+	vector<char> imageVec;
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back(2);
 
+	SimpleFileSystem mySFS;
+	AbstractFile* myAF1 = AbstractFile::createFile("ImageFile", "newfile.img");
+	string myImg = "Image File";
+	AbstractFile* myAF2 = AbstractFile::createFile("TextFile", "newfile.txt");
+	string myTxt = "Text File";
+	mySFS.addFile(myImg, myAF1);
+	mySFS.addFile(myTxt, myAF2);
+
+	mySFS.openFile(myImg);
+	mySFS.openFile(myTxt);
+
+	myAF1->write(imageVec);
+	myAF2->write(imageVec);
+
+	myAF1->read();
+	myAF2->read();
+
+	mySFS.closeFile(myAF1);
+	mySFS.closeFile(myAF2);
+
+	mySFS.deleteFile(myImg);
+	// Note: When I try and delete the pointer to a text file, it jumps in the imageFile class
+	mySFS.deleteFile(myTxt);
+
+	mySFS.createFile("File.img");
+	mySFS.createFile("Text.txt");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
