@@ -11,4 +11,5 @@ public:
 	virtual unsigned int getSize() = 0;
 	virtual string getName() = 0;
 	static AbstractFile* createFile(std::string type, std::string name);
+	virtual ~AbstractFile() = default;
 };
