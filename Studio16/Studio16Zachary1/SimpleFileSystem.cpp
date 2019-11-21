@@ -7,7 +7,7 @@
 int SimpleFileSystem::addFile(string fileName, AbstractFile* AF)
 {
 	// The file was found in our map
-	if (myMap.find(fileName) == myMap.end()) {
+	if (myMap.find(fileName) != myMap.end()) {
 		return fileFound;
 	}
 	// The pointer points to a nullptr
@@ -24,14 +24,14 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* AF)
 int SimpleFileSystem::createFile(string fileName)
 {
 	// The file was found in our map
-	if (myMap.find(fileName) == myMap.end()) {
+	if (myMap.find(fileName) != myMap.end()) {
 		return fileFound;
 	}
 	else {
 		int index;
 		string extension;
 		index = fileName.find_last_of(".");
-		extension = fileName.substr(index, 3);
+		extension = fileName.substr(index + 1, 3);
 		if (extension.compare("img") == 0) {
 			// ** Is this correct ?? **
 			ImageFile* myIF = new ImageFile(fileName);
@@ -52,13 +52,58 @@ int SimpleFileSystem::createFile(string fileName)
 	}
 }
 
+int SimpleFileSystem::deleteFile(string fileName)
+{
+	map<string, AbstractFile*>::iterator it;
+	it = myMap.find(fileName);
+	// The file does not exist
+	if (it == myMap.end()) {
+		return doesntExist;
+	}
+	// The file is open
+	else if (mySet.find(it->second) != mySet.end()) {
+		return fileOpen;
+	}
+	// Remove file from map of files and return success
+	else {
+		// Delete the pointer to the file to avoid memory leaks
+		delete it->second;
+		myMap.erase(it);
+		return success;
+	}
+}
+
 AbstractFile* SimpleFileSystem::openFile(string fileName)
 {
-	// Check to see if the filename exists
-	if (myMap.find(fileName) == myMap.end()) {
+	map<string, AbstractFile*>::iterator it;
+	it = myMap.find(fileName);
+	// The filename does not exist in our map
+	if (it == myMap.end()) {
 		return nullptr;
 	}
-	return nullptr;
+	// The file exists but is open
+	else if (mySet.find(it->second) != mySet.end()) {
+		return nullptr;
+	} 
+	// The file exists but is not open, so we add it to our set
+	else {
+		mySet.insert(it->second);
+		return it->second;
+	}
+}
+
+int SimpleFileSystem::closeFile(AbstractFile* AF)
+{
+	set<AbstractFile*>::iterator it = mySet.find(AF);
+	// The file is open, so we remove it
+	if (it != mySet.end()) {
+		mySet.erase(it);
+		return success;
+	}
+	// The file is not open
+	else {
+		return notOpen;
+	}
 }
 
 
