@@ -21,15 +21,11 @@ This marks the end of Studio 16 and the start of studio 17
 
 1.) Zachary Serotte, Muzammil Mahmud, Maclee Machado
 2.) 
-	a.) I tested my image class with a vector of size 9 that contained pixels that were either an X or a ' ' and the correct 
-	imageSize stored in the last index it worked correctly.
-	b.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the correct 
-	imageSize stored in the last index it worked correctly.
-	c.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the incorrect 
-	imageSize stored in the last index and it gave me a sizeMismatch error.
-	d.) I tested my image class with a vector of size 4 that contained an invalid pixel and the correct imageSize stored in the 
-	last index and it gave me a sizeMismatch error.
+	a.) I tested my image class with a vector of size 9 that contained pixels that were either an X or a ' ' and the correct imageSize stored in the last index it worked correctly.
+	b.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the correct imageSize stored in the last index it worked correctly.
+	c.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the incorrect imageSize stored in the last index and it gave me a sizeMismatch error.
+	d.) I tested my image class with a vector of size 4 that contained an invalid pixel and the correct imageSize stored in the last index and it gave me a sizeMismatch error.
 3.) Programming to a client gives us extensive freedom in terms of what we can do at runtime from the client side and also the
 ability to easily add dervied classes to our interface that add the funcionallity of new types of objects that the programmer
 might want to add on later.
-4.) 
+4.) We belive that in order to create a new concrete file type we would have to create new header and source files with a new class that inherits from the AbstractFile class, as we did with the ImageFile and TextFile classes
