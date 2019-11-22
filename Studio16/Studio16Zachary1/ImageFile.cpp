@@ -71,7 +71,4 @@ unsigned int ImageFile::getIndex(unsigned int x, int y)
 	return (y * imageSize + x);
 }
 
-// We are at the end of 2. We are getting some errors when we test our program. Lets debug it and see where
-// they are happening
-
 
