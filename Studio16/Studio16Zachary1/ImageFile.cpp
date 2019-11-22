@@ -70,5 +70,3 @@ unsigned int ImageFile::getIndex(unsigned int x, int y)
 {
 	return (y * imageSize + x);
 }
-
-
