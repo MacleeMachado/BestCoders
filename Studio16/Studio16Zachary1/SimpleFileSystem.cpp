@@ -105,5 +105,3 @@ int SimpleFileSystem::closeFile(AbstractFile* AF)
 		return notOpen;
 	}
 }
-
-
