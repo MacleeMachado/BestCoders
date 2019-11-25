@@ -28,7 +28,7 @@ int SimpleFileSystem::createFile(string fileName)
 		return fileFound;
 	}
 	else {
-		int index;
+		size_t index;
 		string extension;
 		index = fileName.find_last_of(".");
 		extension = fileName.substr(index + 1, 3);

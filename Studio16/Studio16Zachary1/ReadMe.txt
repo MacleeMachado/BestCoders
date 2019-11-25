@@ -34,3 +34,8 @@ ability to easily add dervied classes to our interface that add the funcionallit
 might want to add on later.
 4.) We belive that in order to create a new concrete file type we would have to create new header and source files with a new class
 that inherits from the AbstractFile class, as we did with the ImageFile and TextFile classes
+
+---------------------
+This marks the end of Studio 17 and the start of studio 18
+---------------------
+

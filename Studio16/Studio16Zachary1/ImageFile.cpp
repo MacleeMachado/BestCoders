@@ -6,9 +6,10 @@ ImageFile::ImageFile(string initialFileName) : fileName{ initialFileName }, imag
 
 }
 
+// Acceptable warning
 unsigned int ImageFile::getSize()
 {
-	return fileContents.size();
+	return (unsigned int)fileContents.size();
 }
 
 string ImageFile::getName()
@@ -21,9 +22,10 @@ int ImageFile::write(vector<char> myVec)
 	// Set the image size member variable to be whatever in stored in the last position of the vector that was passed in 
 	imageSize = myVec[myVec.size() - 1];
 	// There is a size mismatch
-	// The singed/unsigned is occuring here, and it is okay
-	if (myVec.size() - 1 != (imageSize * imageSize)) {
-		for (unsigned int i = 0; i < fileContents.size(); i++) {
+	size_t iSize = (size_t)imageSize;
+	if (myVec.size() - 1 != (iSize * iSize)) {
+		for (size_t i = 0; i < fileContents.size(); i++) {
+			// subscript operator expeects size_t
 			fileContents[i] = ' ';
 		}
 		fileContents.resize(0);
@@ -57,8 +59,9 @@ int ImageFile::append(vector<char> myVec) {
 void ImageFile::read() {
 	unsigned int index;
 	// The mismatch here is okay
+	unsigned int iSize = (unsigned int)imageSize;
 	for (int i = imageSize - 1; i >= 0; i--) {
-		for (unsigned int j = 0; j < imageSize; j++) {
+		for (unsigned int j = 0; j < iSize; j++) {
 			index = getIndex(j, i);
 			cout << fileContents[index];
 		}

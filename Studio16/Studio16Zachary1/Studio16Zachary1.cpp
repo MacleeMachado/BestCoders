@@ -61,6 +61,12 @@ int main()
 	imageVec.push_back(' ');
 	imageVec.push_back(2);
 
+	vector<char> textVec;
+	textVec.push_back('a');
+	textVec.push_back('b');
+	textVec.push_back('c');
+	textVec.push_back('d');
+
 	SimpleFileSystem mySFS;
 	AbstractFile* myAF1 = AbstractFile::createFile("ImageFile", "newfile.img");
 	string myImg = "Image File";
@@ -73,7 +79,7 @@ int main()
 	mySFS.openFile(myTxt);
 
 	myAF1->write(imageVec);
-	myAF2->write(imageVec);
+	myAF2->write(textVec);
 
 	myAF1->read();
 	myAF2->read();
