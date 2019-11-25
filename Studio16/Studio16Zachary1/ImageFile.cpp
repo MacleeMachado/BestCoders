@@ -34,10 +34,10 @@ int ImageFile::write(vector<char> myVec)
 	}
 
 	// Replace the contents of our file contents member variable with the contents of the vector that was passed in
-	for (unsigned int i = 0; i < myVec.size() - 1; i++) {
+	for (size_t i = 0; i < myVec.size() - 1; i++) {
 		// There is a misplaced pixele
 		if ((myVec[i] != 'X') && (myVec[i] != ' ')) {
-			for (unsigned int j = 0; j < fileContents.size(); j++) {
+			for (size_t j = 0; j < fileContents.size(); j++) {
 				fileContents[j] = ' ';
 			}
 			fileContents.resize(0);

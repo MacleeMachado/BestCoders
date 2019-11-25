@@ -39,3 +39,8 @@ that inherits from the AbstractFile class, as we did with the ImageFile and Text
 This marks the end of Studio 17 and the start of studio 18
 ---------------------
 
+2.) The factory method offers a repeatable way to apply our abstract file system class to other file systems with their own way
+of utilizing the abstract file system. The code currently depends on each other not being able to implement one without the given
+hierarchy but this can be restructured. 
+
+3.) 

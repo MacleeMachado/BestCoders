@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractFile.cpp" />
     <ClCompile Include="ImageFile.cpp" />
+    <ClCompile Include="SimpleFileFactory.cpp" />
     <ClCompile Include="SimpleFileSystem.cpp" />
     <ClCompile Include="Studio16Zachary1.cpp" />
     <ClCompile Include="TextFile.cpp" />
@@ -158,9 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFile.h" />
+    <ClInclude Include="AbstractFileFactory.h" />
     <ClInclude Include="AbstractFileSystem.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="ImageFile.h" />
+    <ClInclude Include="SimpleFileFactory.h" />
     <ClInclude Include="SimpleFileSystem.h" />
     <ClInclude Include="TextFile.h" />
   </ItemGroup>
