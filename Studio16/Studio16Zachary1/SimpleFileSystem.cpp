@@ -21,7 +21,7 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* AF)
 	}
 }
 
-int SimpleFileSystem::createFile(string fileName)
+/* int SimpleFileSystem::createFile(string fileName)
 {
 	// The file was found in our map
 	if (myMap.find(fileName) != myMap.end()) {
@@ -50,7 +50,7 @@ int SimpleFileSystem::createFile(string fileName)
 			return extensionFail;
 		}
 	}
-}
+} */
 
 int SimpleFileSystem::deleteFile(string fileName)
 {

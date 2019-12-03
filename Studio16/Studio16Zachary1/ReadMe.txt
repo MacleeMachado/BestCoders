@@ -43,4 +43,21 @@ This marks the end of Studio 17 and the start of studio 18
 of utilizing the abstract file system. The code currently depends on each other not being able to implement one without the given
 hierarchy but this can be restructured. 
 
-3.) 
+3.) The advantages of the abstract factory pattern is that is simplifies the code and the logical understanding of the code in the
+programmers mind by making it so that each class has its own unique role in the management, creation and deletion of files. Creating a
+new concrete factory helps disperse the responsiblities in the file system more. You would have to create a new header and source file
+for that file type and you would need to make sure that that file type is included in our file system. With regards to our
+SimpleFileFactory.cpp file we would have to add some more code to check for the extension of the new file type (i.e., img, txt)
+
+4.) 
+	a.) I tested my image class with a vector of size 9 that contained pixels that were either an X or a ' ' and the correct 
+	imageSize stored in the last index it worked correctly.
+	b.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the correct 
+	imageSize stored in the last index it worked correctly.
+	c.) I tested my image class with a vector of size 4 that contained pixels that were either an X or a ' ' and the incorrect 
+	imageSize stored in the last index and it gave me a sizeMismatch error.
+	d.) I tested my image class with a vector of size 4 that contained an invalid pixel and the correct imageSize stored in the 
+	last index and it gave me a sizeMismatch error.
+	e.) I made a TextFile object and pushed in a vector of chars that I created earlier. I than printed out that vector using the print
+	method and it printed out each char with a space after it as I planned. I than tried to push a vector ints into my TextFile object,
+	and my program threw an error, as expected.

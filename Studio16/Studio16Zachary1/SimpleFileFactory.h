@@ -1,7 +1,7 @@
 #pragma once
 #include "AbstractFileFactory.h"
 
-class SimpleFileFactory : AbstractFileFactory {
+class SimpleFileFactory : public AbstractFileFactory {
 public:
 	virtual AbstractFile* createFile(string fileName);
 };

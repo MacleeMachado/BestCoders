@@ -5,6 +5,7 @@
 #include "TextFile.h"
 #include "AbstractFile.h"
 #include "SimpleFileSystem.h"
+#include "SimpleFileFactory.h"
 
 int main()
 {
@@ -54,6 +55,7 @@ int main()
 	myAF->read();
 	*/
 	
+	/*
 	vector<char> imageVec;
 	imageVec.push_back('X');
 	imageVec.push_back(' ');
@@ -93,6 +95,40 @@ int main()
 
 	mySFS.createFile("File.img");
 	mySFS.createFile("Text.txt");
+	*/
+
+	// ----------------- Studio 18 below -------------------------
+
+	AbstractFileSystem* mySFS = new SimpleFileSystem;
+	AbstractFileFactory* myAFF = new SimpleFileFactory;
+	AbstractFile* txtFile = myAFF->createFile("check.txt");
+	AbstractFile* imgFile = myAFF->createFile("check.img");
+	mySFS->addFile("check.txt", txtFile);
+	mySFS->addFile("check.img", imgFile);
+
+	vector<char> imageVec;
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back(2);
+
+	vector<char> textVec;
+	textVec.push_back('a');
+	textVec.push_back('b');
+	textVec.push_back('c');
+	textVec.push_back('d');
+
+	mySFS->openFile("check.txt");
+	mySFS->openFile("check.img");
+
+	imgFile->write(imageVec);
+	txtFile->write(textVec);
+
+	imgFile->read();
+	txtFile->read();
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
