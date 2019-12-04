@@ -34,6 +34,7 @@ int ImageFile::write(vector<char> myVec)
 	}
 
 	// Replace the contents of our file contents member variable with the contents of the vector that was passed in
+	fileContents.clear();
 	for (size_t i = 0; i < myVec.size() - 1; i++) {
 		// There is a misplaced pixele
 		if ((myVec[i] != 'X') && (myVec[i] != ' ')) {
@@ -46,6 +47,7 @@ int ImageFile::write(vector<char> myVec)
 		}
 		else {
 			fileContents.push_back(myVec[i]);
+			// fileContents[i] = myVec[i];
 		}
 	}
 	return success;
@@ -56,17 +58,18 @@ int ImageFile::append(vector<char> myVec) {
 	return imageAppend;
 }
 
-void ImageFile::read() {
+vector<char> ImageFile::read() {
 	unsigned int index;
 	// The mismatch here is okay
 	unsigned int iSize = (unsigned int)imageSize;
-	for (int i = imageSize - 1; i >= 0; i--) {
+	/*for (int i = imageSize - 1; i >= 0; i--) {
 		for (unsigned int j = 0; j < iSize; j++) {
 			index = getIndex(j, i);
 			cout << fileContents[index];
 		}
 		cout << endl;
-	}
+	}*/
+	return fileContents;
 }
 
 unsigned int ImageFile::getIndex(unsigned int x, int y)

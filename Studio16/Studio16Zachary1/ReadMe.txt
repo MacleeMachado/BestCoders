@@ -61,3 +61,8 @@ SimpleFileFactory.cpp file we would have to add some more code to check for the 
 	e.) I made a TextFile object and pushed in a vector of chars that I created earlier. I than printed out that vector using the print
 	method and it printed out each char with a space after it as I planned. I than tried to push a vector ints into my TextFile object,
 	and my program threw an error, as expected.
+
+---------------------
+This marks the end of Studio 18 and the start of studio 19
+---------------------
+

@@ -13,5 +13,5 @@ public:
 	virtual string getName();
 	virtual int write(vector<char> myVec);
 	virtual int append(vector<char> myVec);
-	virtual void read();
+	virtual vector<char> read();
 };

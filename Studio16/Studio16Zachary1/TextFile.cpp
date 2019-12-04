@@ -6,10 +6,11 @@ TextFile::TextFile(string myName): fileName(myName){
 	
 }
 
-void TextFile::read(){
-	for (int i = 0; i < fileContents.size(); i++) {
+vector<char> TextFile::read(){
+	/*for (int i = 0; i < fileContents.size(); i++) {
 		cout << fileContents.at(i);
-	}
+	}*/
+	return fileContents;
 }
 
 int TextFile::write(vector<char> myVec){

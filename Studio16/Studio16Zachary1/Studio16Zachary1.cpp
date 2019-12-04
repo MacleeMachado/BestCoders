@@ -99,7 +99,7 @@ int main()
 
 	// ----------------- Studio 18 below -------------------------
 
-	AbstractFileSystem* mySFS = new SimpleFileSystem;
+	/*AbstractFileSystem* mySFS = new SimpleFileSystem;
 	AbstractFileFactory* myAFF = new SimpleFileFactory;
 	AbstractFile* txtFile = myAFF->createFile("check.txt");
 	AbstractFile* imgFile = myAFF->createFile("check.img");
@@ -126,18 +126,49 @@ int main()
 	txtFile->write(textVec);
 
 	imgFile->read();
-	txtFile->read();
+	txtFile->read();*/
 
+	// ----------------- Studio 19 below -------------------------
+	
+	AbstractFileSystem* mySFS = new SimpleFileSystem;
+	AbstractFileFactory* myAFF = new SimpleFileFactory;
+	AbstractFile* txtFile = myAFF->createFile("check.txt");
+	AbstractFile* imgFile = myAFF->createFile("check.img");
+	mySFS->addFile("check.txt", txtFile);
+	mySFS->addFile("check.img", imgFile);
+
+	vector<char> imageVec;
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back('X');
+	imageVec.push_back(' ');
+	imageVec.push_back(2);
+
+	vector<char> textVec;
+	textVec.push_back('a');
+	textVec.push_back('b');
+	textVec.push_back('c');
+	textVec.push_back('d');
+
+	txtFile = mySFS->openFile("check.txt");
+	imgFile = mySFS->openFile("check.img");
+
+	imgFile->write(imageVec);
+	txtFile->write(textVec);
+
+	vector<char> img = imgFile->read();
+	vector<char> txt = txtFile->read();
+
+	txt.push_back('5');
+	img.at(0) = ' ';
+	img.push_back(2);
+
+	imgFile->write(img);
+	txtFile->write(txt);
+	
+	vector<char> img1 = imgFile->read();
+	vector<char> txt1 = txtFile->read();
+
+	
 
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
