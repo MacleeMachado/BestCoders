@@ -76,3 +76,9 @@ unsigned int ImageFile::getIndex(unsigned int x, int y)
 {
 	return (y * imageSize + x);
 }
+
+//void ImageFile::accept(AbstractFileVisitor* visit) {
+//	if (visit) {
+//		visit->visit_ImageFile(this);
+//	}
+//}

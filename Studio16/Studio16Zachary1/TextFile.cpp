@@ -37,3 +37,9 @@ string TextFile::getName()
 {
 	return fileName;
 }
+
+//void TextFile::accept(AbstractFileVisitor* visit) {
+//	if (visit) {
+//		visit->visit_TextFile(this);
+//	}
+//}

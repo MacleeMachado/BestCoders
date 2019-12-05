@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractFile.cpp" />
+    <ClCompile Include="AbstractFileVisitor.cpp" />
     <ClCompile Include="ImageFile.cpp" />
     <ClCompile Include="SimpleFileFactory.cpp" />
     <ClCompile Include="SimpleFileSystem.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="AbstractFile.h" />
     <ClInclude Include="AbstractFileFactory.h" />
     <ClInclude Include="AbstractFileSystem.h" />
+    <ClInclude Include="AbstractFileVisitor.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="ImageFile.h" />
     <ClInclude Include="SimpleFileFactory.h" />

@@ -14,4 +14,5 @@ public:
 	virtual int write(vector<char> myVec);
 	virtual int append(vector<char> myVec);
 	virtual vector<char> read();
+	virtual void ImageFile::accept(AbstractFileVisitor* visit);
 };

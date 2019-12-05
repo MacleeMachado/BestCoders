@@ -13,4 +13,5 @@ public:
 	virtual int append(vector<char> myVec);
 	virtual unsigned int getSize();
 	virtual string getName();
+	virtual void accept(AbstractFileVisitor* visit);
 };
