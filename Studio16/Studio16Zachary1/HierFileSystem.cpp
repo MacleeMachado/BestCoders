@@ -2,7 +2,7 @@
 #include "Common.h"
 
 HierFileSystem::HierFileSystem(): dRoot(nullptr) {
-	// dRoot = new DirectoryFile("root");
+	dRoot = new DirectoryFile("root");
 	dRoot->setParent(dRoot);
 }
 
@@ -125,4 +125,5 @@ AbstractFile* HierFileSystem::parsePath(string filePath) {
 			return nullptr;
 		}
 	}
+	return current;
 };

@@ -7,6 +7,7 @@
 #include "SimpleFileSystem.h"
 #include "SimpleFileFactory.h"
 #include "BasicDisplayVisitor.h"
+#include "HierFileSystem.h"
 
 int main()
 {
@@ -180,5 +181,40 @@ int main()
 	// ----------------- Studio 20 below -------------------------
 
 	
+	auto hFile = new HierFileSystem();
+	auto d1 = new DirectoryFile("d1.");
+	auto d2 = new DirectoryFile("d2.");
+	hFile->addFile("root/d1", d1);
+	hFile->addFile("root/d2", d2);
+
+	AbstractFileFactory* myAFF = new SimpleFileFactory;
+	AbstractFile* txtFile = myAFF->createFile("check.txt");
+	AbstractFile* imgFile = myAFF->createFile("check.img");
+	hFile->addFile("root/d1/check.txt", txtFile);
+	hFile->addFile("root/d2/check.img", imgFile);
+
+	d1->addChild(txtFile);
+	d2->addChild(imgFile);
+
+	AbstractFile* file1 = hFile->openFile("root/d1/check.txt");
+	AbstractFile* file2 = hFile->openFile("check.img");
+
+	vector<char> temp = {'m','y',' ','t','x','t'};
+	file1->write(temp);
+	file2->write({ 'X','X',' ','X', '2'});
+
+	AbstractFileVisitor* disp = new BasicDisplayVisitor();
+	txtFile->accept(disp);
+	cout << endl;
+	imgFile->accept(disp);
+
+
+
+
+
+	
+
+
+
 
 }

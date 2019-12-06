@@ -17,7 +17,7 @@ public:
 	virtual int write(vector<char> myVec);
 	virtual int append(vector<char> myVec);
 	virtual unsigned int getSize();
-	virtual string getName() = 0;
+	virtual string getName();
 	virtual void accept(AbstractFileVisitor* visit);
 	virtual int addChild(AbstractFile* child);
 protected:

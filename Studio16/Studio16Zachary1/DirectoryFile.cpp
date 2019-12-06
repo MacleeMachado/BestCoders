@@ -71,7 +71,7 @@ int DirectoryFile::removeChild(string filename) {
 	return success;
 }
 AbstractFile* DirectoryFile::getChild(string filename) {
-	auto it = directoryChildren.find(fileName);
+	auto it = directoryChildren.find(filename);
 	if (it != directoryChildren.end()) {
 		return it->second;
 	}
