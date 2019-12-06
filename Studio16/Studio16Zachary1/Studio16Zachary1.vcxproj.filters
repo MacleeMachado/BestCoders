@@ -39,6 +39,9 @@
     <ClCompile Include="DirectoryFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HierFileSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DirectoryFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HierFileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

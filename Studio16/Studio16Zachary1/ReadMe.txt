@@ -89,3 +89,4 @@ This marks the end of Studio 19 and the start of studio 20
 3.) Yeah bro, it would be a great idea because it allows us to interact with all the object indiscriminately
 4.) We would need to change the abstract file and simple file factory create file methods so it can handle interacting with a file of that type.  We will also 
 create concrete classes for whatever the new file type would be. And change the visitor files.
+5.) 

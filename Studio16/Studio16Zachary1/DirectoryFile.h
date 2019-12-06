@@ -4,6 +4,7 @@
 using namespace std;
 
 class DirectoryFile : public AbstractFile {
+	friend class HierFileSystem;
 private:
 	string fileName;
 	vector<char> directoryContents;
