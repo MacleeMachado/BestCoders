@@ -3,7 +3,7 @@
 #include "Common.h"
 #include "AbstractFileVisitor.h"
 
-TextFile::TextFile(string myName): fileName(myName){
+TextFile::TextFile(string myName): fileName(myName), parent(nullptr){
 	
 }
 
@@ -48,8 +48,18 @@ vector<char> TextFile::getFileContents()
 	return fileContents;
 }
 
-//void TextFile::accept(AbstractFileVisitor* visit) {
-//	if (visit) {
-//		visit->visit_TextFile(this);
-//	}
-//}
+int TextFile::addChild(AbstractFile* child) {
+	return not_composite;
+}
+int TextFile::removeChild(string filename) {
+	return not_composite;
+}
+AbstractFile* TextFile::getChild(string filename) {
+	return nullptr;
+}
+void TextFile::setParent(AbstractFile* p) {
+	parent = p;
+}
+AbstractFile* TextFile::getParent() {
+	return parent;
+}

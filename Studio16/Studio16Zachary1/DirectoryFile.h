@@ -1,24 +1,25 @@
 #pragma once
 #include "AbstractFile.h"
-//#include "BasicDisplayVisitor.h"
+#include <map>
+using namespace std;
 
-class TextFile : public AbstractFile {
+class DirectoryFile : public AbstractFile {
 private:
-	vector<char> fileContents;
 	string fileName;
-	AbstractFile* parent;
+	vector<char> directoryContents;
+	AbstractFile* directoryParent;
+	map<string, AbstractFile*> directoryChildren;
 public:
-	// Should this be public?
-	TextFile(string myName);
+	DirectoryFile(string name);
+	~DirectoryFile();
 	virtual vector<char> read();
 	virtual int write(vector<char> myVec);
 	virtual int append(vector<char> myVec);
 	virtual unsigned int getSize();
-	virtual string getName();
+	virtual string getName() = 0;
 	virtual void accept(AbstractFileVisitor* visit);
-	vector<char> getFileContents();
-protected:
 	virtual int addChild(AbstractFile* child);
+protected:
 	virtual int removeChild(string filename);
 	virtual AbstractFile* getChild(string filename);
 	virtual void setParent(AbstractFile* p);

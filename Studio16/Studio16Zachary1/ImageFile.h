@@ -3,10 +3,11 @@
 //#include "BasicDisplayVisitor.h"
 
 class ImageFile: public AbstractFile {
-protected:
+private:
 	string fileName;
 	vector<char> fileContents;
 	char imageSize;
+	AbstractFile* parent;
 public:
 	ImageFile(string initialFileName);
 	virtual unsigned int getSize();
@@ -18,4 +19,10 @@ public:
 	unsigned int getIndex(unsigned int x, int y);
 	vector<char> getFileContents();
 	char getImageSize();
+protected:
+	virtual int addChild(AbstractFile* child);
+	virtual int removeChild(string filename);
+	virtual AbstractFile* getChild(string filename);
+	virtual void setParent(AbstractFile* p);
+	virtual AbstractFile* getParent();
 };

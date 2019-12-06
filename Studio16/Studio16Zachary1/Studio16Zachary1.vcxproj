@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractFile.cpp" />
     <ClCompile Include="BasicDisplayVisitor.cpp" />
+    <ClCompile Include="DirectoryFile.cpp" />
     <ClCompile Include="ImageFile.cpp" />
     <ClCompile Include="SimpleFileFactory.cpp" />
     <ClCompile Include="SimpleFileSystem.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="AbstractFileVisitor.h" />
     <ClInclude Include="BasicDisplayVisitor.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="DirectoryFile.h" />
     <ClInclude Include="ImageFile.h" />
     <ClInclude Include="SimpleFileFactory.h" />
     <ClInclude Include="SimpleFileSystem.h" />

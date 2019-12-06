@@ -16,4 +16,9 @@ public:
 	static AbstractFile* createFile(std::string type, std::string name);
 	virtual ~AbstractFile() = default;
 	virtual void accept(AbstractFileVisitor* visit) = 0;
+	virtual int addChild(AbstractFile* child) = 0;
+	virtual int removeChild(string filename) = 0;
+	virtual AbstractFile* getChild(string filename) = 0;
+	virtual void setParent(AbstractFile* parent) = 0;
+	virtual AbstractFile* getParent() = 0;
 };

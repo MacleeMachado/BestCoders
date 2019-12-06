@@ -3,7 +3,7 @@
 #include <iostream>
 #include "AbstractFileVisitor.h"
 
-ImageFile::ImageFile(string initialFileName) : fileName{ initialFileName }, imageSize{ 0 } {
+ImageFile::ImageFile(string initialFileName) : fileName{ initialFileName }, imageSize{ 0 }, parent(nullptr) {
 
 }
 
@@ -60,7 +60,7 @@ int ImageFile::append(vector<char> myVec) {
 }
 
 vector<char> ImageFile::read() {
-	unsigned int index;
+	//unsigned int index;
 	// The mismatch here is okay
 	unsigned int iSize = (unsigned int)imageSize;
 	/*for (int i = imageSize - 1; i >= 0; i--) {
@@ -92,8 +92,18 @@ char ImageFile::getImageSize()
 	return imageSize;
 }
 
-//void ImageFile::accept(AbstractFileVisitor* visit) {
-//	if (visit) {
-//		visit->visit_ImageFile(this);
-//	}
-//}
+int ImageFile::addChild(AbstractFile* child) {
+	return not_composite;
+}
+int ImageFile::removeChild(string filename) {
+	return not_composite;
+}
+AbstractFile* ImageFile::getChild(string filename) {
+	return nullptr;
+}
+void ImageFile::setParent(AbstractFile* p) {
+	parent = p;
+}
+AbstractFile* ImageFile::getParent() {
+	return parent;
+}
