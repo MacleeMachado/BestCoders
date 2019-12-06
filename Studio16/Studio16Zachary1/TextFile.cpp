@@ -1,6 +1,7 @@
 #include "TextFile.h"
 #include <iostream>
 #include "Common.h"
+#include "AbstractFileVisitor.h"
 
 TextFile::TextFile(string myName): fileName(myName){
 	
@@ -36,6 +37,15 @@ unsigned int TextFile::getSize()
 string TextFile::getName()
 {
 	return fileName;
+}
+
+void TextFile::accept(AbstractFileVisitor* visit) {
+	visit->visit_TextFile(this);
+}
+
+vector<char> TextFile::getFileContents()
+{
+	return fileContents;
 }
 
 //void TextFile::accept(AbstractFileVisitor* visit) {

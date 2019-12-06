@@ -1,5 +1,6 @@
 #pragma once
 #include "AbstractFile.h"
+//#include "BasicDisplayVisitor.h"
 
 class TextFile : public AbstractFile {
 protected:
@@ -14,4 +15,5 @@ public:
 	virtual unsigned int getSize();
 	virtual string getName();
 	virtual void accept(AbstractFileVisitor* visit);
+	vector<char> getFileContents();
 };

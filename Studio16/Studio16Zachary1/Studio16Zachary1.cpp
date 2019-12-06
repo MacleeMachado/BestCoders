@@ -6,6 +6,7 @@
 #include "AbstractFile.h"
 #include "SimpleFileSystem.h"
 #include "SimpleFileFactory.h"
+#include "BasicDisplayVisitor.h"
 
 int main()
 {
@@ -130,6 +131,7 @@ int main()
 
 	// ----------------- Studio 19 below -------------------------
 	
+/*
 	AbstractFileSystem* mySFS = new SimpleFileSystem;
 	AbstractFileFactory* myAFF = new SimpleFileFactory;
 	AbstractFile* txtFile = myAFF->createFile("check.txt");
@@ -168,6 +170,14 @@ int main()
 	
 	vector<char> img1 = imgFile->read();
 	vector<char> txt1 = txtFile->read();
+
+	AbstractFileVisitor* myBDV = new BasicDisplayVisitor;
+
+	txtFile->accept(myBDV);
+	cout << endl;
+	imgFile->accept(myBDV); */
+
+	// ----------------- Studio 20 below -------------------------
 
 	
 

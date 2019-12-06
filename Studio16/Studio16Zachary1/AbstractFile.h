@@ -1,8 +1,10 @@
 #pragma once
 using namespace std;
-#include "AbstractFileVisitor.h"
+//#include "AbstractFileVisitor.h"
 #include <vector>
 #include <string>
+
+class AbstractFileVisitor;
 
 class AbstractFile {
 public:

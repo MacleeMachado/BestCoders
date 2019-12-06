@@ -1,6 +1,7 @@
 #include "ImageFile.h"
 #include "Common.h"
 #include <iostream>
+#include "AbstractFileVisitor.h"
 
 ImageFile::ImageFile(string initialFileName) : fileName{ initialFileName }, imageSize{ 0 } {
 
@@ -72,9 +73,23 @@ vector<char> ImageFile::read() {
 	return fileContents;
 }
 
+void ImageFile::accept(AbstractFileVisitor* visit) {
+	visit->visit_ImageFile(this);
+}
+
 unsigned int ImageFile::getIndex(unsigned int x, int y)
 {
 	return (y * imageSize + x);
+}
+
+vector<char> ImageFile::getFileContents()
+{
+	return fileContents;
+}
+
+char ImageFile::getImageSize()
+{
+	return imageSize;
 }
 
 //void ImageFile::accept(AbstractFileVisitor* visit) {

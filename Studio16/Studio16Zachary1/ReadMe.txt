@@ -66,3 +66,23 @@ SimpleFileFactory.cpp file we would have to add some more code to check for the 
 This marks the end of Studio 18 and the start of studio 19
 ---------------------
 
+2.) We tried test cases with correctly and incorrectly formatted text and image files. We found that there was a small problem in
+with our write function for images files while doing these tests and had to spend a good chunk of time fixing it. The problem was that
+our function was not clearing the file contents vector when we write to the image file with a new vector.
+3.) The visitor has access to the file it is visitng via the parameter of the visit_image_file or visit_text_file function. When the
+function is being executed the visitor has access to the image or text file however once the function returns it no longer has 
+access
+4.) Delegation helps separate responsiblities between classes and makes it so that your code is less cluttered, easier to 
+understand, and so that each class has a unique role. The visitor pattern adds additional functionallity by allowing classes to 
+have access to functions defined in other classes without redefining them in their own class, but rather by having temporary 
+access to those functions when they are visiting the class
+5.) My first thought was that we could have a visitor visit a class and than return one of the member variables from the class that 
+it is visiting. We would need to update all of the visitors and all of the abstract file types so that they can handle that
+specific file type. I think the consequence of the visitor pattern is if you have multiple unique visitors visiting a class one 
+of them might modify the metadata and than as a result the visitors would have different values for the same piece of metadata. 
+
+---------------------
+This marks the end of Studio 19 and the start of studio 20
+---------------------
+
+2.) 

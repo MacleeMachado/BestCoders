@@ -33,7 +33,7 @@
     <ClCompile Include="SimpleFileFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractFileVisitor.cpp">
+    <ClCompile Include="BasicDisplayVisitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AbstractFileVisitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicDisplayVisitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
