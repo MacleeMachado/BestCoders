@@ -64,7 +64,7 @@ AbstractFile* HierFileSystem::openFile(string fileName)
 	if (fileToOpen == nullptr) {
 		return nullptr;
 	}
-	if (openFiles.find(fileToOpen) != openFiles.end()) {
+	if (openFiles.find(fileToOpen) == openFiles.end()) {
 		openFiles.insert(fileToOpen);
 		return fileToOpen;
 	}
@@ -87,7 +87,7 @@ int HierFileSystem::closeFile(AbstractFile* AF)
 
 AbstractFile* HierFileSystem::parsePath(string filePath) {
 	size_t startIndex = 0;
-	size_t endIndex = filePath.find_first_of('/');
+	size_t endIndex = filePath.find_first_of('/', startIndex);
 	AbstractFile* current;
 	string directory;
 	// If we have a match

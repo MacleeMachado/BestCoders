@@ -19,10 +19,10 @@ public:
 	virtual unsigned int getSize();
 	virtual string getName();
 	virtual void accept(AbstractFileVisitor* visit);
-	virtual int addChild(AbstractFile* child);
 protected:
 	virtual int removeChild(string filename);
 	virtual AbstractFile* getChild(string filename);
 	virtual void setParent(AbstractFile* p);
 	virtual AbstractFile* getParent();
+	virtual int addChild(AbstractFile* child);
 };
