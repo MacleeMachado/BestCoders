@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractFile.cpp" />
     <ClCompile Include="BasicDisplayVisitor.cpp" />
+    <ClCompile Include="CommandPrompt.cpp" />
     <ClCompile Include="DirectoryFile.cpp" />
     <ClCompile Include="HierFileFactory.cpp" />
     <ClCompile Include="HierFileSystem.cpp" />
@@ -163,11 +164,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractCommand.h" />
     <ClInclude Include="AbstractFile.h" />
     <ClInclude Include="AbstractFileFactory.h" />
     <ClInclude Include="AbstractFileSystem.h" />
     <ClInclude Include="AbstractFileVisitor.h" />
     <ClInclude Include="BasicDisplayVisitor.h" />
+    <ClInclude Include="CommandPrompt.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DirectoryFile.h" />
     <ClInclude Include="HierFileFactory.h" />
