@@ -10,6 +10,8 @@
 #include "HierFileSystem.h"
 #include "HierFileFactory.h"
 #include "MetadataVisitor.h"
+#include "TouchCommand.h"
+#include "CommandPrompt.h"
 
 int main()
 {
@@ -218,6 +220,7 @@ int main()
 
 	// ----------------- Studio 21 below -------------------------
 
+/*
 	HierFileFactory myHFF;
 
 	auto myTxt = myHFF.createFile("myTF.txt");
@@ -244,6 +247,18 @@ int main()
 	cout << endl;
 	myImg->accept(myMDV);
 	cout << endl;
-	myDir->accept(myMDV);
+	myDir->accept(myMDV); */
+
+	HierFileSystem* myHFS = new HierFileSystem();
+	HierFileFactory* myHFF = new HierFileFactory();
+	TouchCommand* myTC = new TouchCommand(myHFS, myHFF);
+
+	CommandPrompt* myCP = new CommandPrompt();
+
+	myCP->setFileSystem(myHFS);
+	myCP->setFileFactory(myHFF);
+	myCP->addCommand("Slay", myTC);
+
+	myCP->run();
 
 }

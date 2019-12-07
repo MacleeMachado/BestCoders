@@ -100,4 +100,10 @@ This marks the end of Studio 20 and the start of studio 21
 2.) Trying to write to a directory file returns an enum saying that there was a write error
 3.) It is a good idea to use the visitor patteren when it is likely that many new file types will be added to the project in the
 future because by using the visitor pattern you wont have to declare and define as many methods as you would have to without it
-4.) 
+4.) N/A
+5.) Since none of the parts of our project rely directly on any of the other parts, we have the ability to use these unique parts of
+our project in other projects that we may work on. Furthermore, instead of a client specifying which service it will use, our project uses the
+input from the command prompt to tell the client what service to use.
+6.) When we tried to quit with q, our program succesfully quit. When we typed help, our program gave us a list of commands. When we
+typed 'help TouchCommand' the program gave us the following output, "touch creates a file Usage: touch <filename>". When we inputted
+touch <filename> the program created our file and than reprompted us.

@@ -159,6 +159,7 @@
     <ClCompile Include="SimpleFileSystem.cpp" />
     <ClCompile Include="Studio16Zachary1.cpp" />
     <ClCompile Include="TextFile.cpp" />
+    <ClCompile Include="TouchCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -180,6 +181,7 @@
     <ClInclude Include="SimpleFileFactory.h" />
     <ClInclude Include="SimpleFileSystem.h" />
     <ClInclude Include="TextFile.h" />
+    <ClInclude Include="TouchCommand.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

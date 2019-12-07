@@ -10,7 +10,7 @@ AbstractFile* HierFileFactory::createFile(string fileName)
 	string extension;
 	index = fileName.find_last_of(".");
 	if (index == string::npos) {
-		AbstractFile* myDF = new DirectoryFile("fileName");
+		AbstractFile* myDF = new DirectoryFile(fileName);
 		return myDF;
 	}
 	extension = fileName.substr(index + 1, 3);

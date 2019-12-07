@@ -7,23 +7,40 @@ CommandPrompt::CommandPrompt() : fileSystemObject(nullptr), factoryFileObject(nu
 }
 
 void CommandPrompt::listCommands() {
-
+	auto it = objects.begin();
+	cout << "Commands: ";
+	while (it != objects.end()) {
+		cout << it->first << " ";
+		it++;
+	}
 }
 
 string CommandPrompt::prompt() {
-
+	cout << "Please enter a valid command: 'q' to quit" << endl;
+	cout << "'help' for a list of commands" << endl;
+	cout << "or 'help <command name>' for a list of commands" << endl;
+	cout << currentDir << '$' << endl;
+	string input;
+	getline(cin, input);
+	return input;
 }
 
 void CommandPrompt::setFileSystem(AbstractFileSystem* afs) {
-
+	fileSystemObject = afs;
 }
 
 void CommandPrompt::setFileFactory(AbstractFileFactory* aff) {
-
+	factoryFileObject = aff;
 }
 
 int CommandPrompt::addCommand(string key, AbstractCommand* value) {
-
+	auto result = objects.insert({ key, value });
+	if (result.second) {
+		return success;
+	}
+	else {
+		return couldntAdd;
+	}
 }
 
 int CommandPrompt::run() {
@@ -65,7 +82,7 @@ int CommandPrompt::run() {
 			else {
 				string hold2;
 				temp >> hold2;
-				auto iter2 = objects.find(hold);
+				auto iter2 = objects.find(hold2);
 				if (iter2 != objects.end()) {
 					//maybe substring ?? take subtring after space
 					int result = iter2->second->execute(currentDir, hold2);
