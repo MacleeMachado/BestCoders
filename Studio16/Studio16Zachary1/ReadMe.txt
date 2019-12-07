@@ -92,3 +92,12 @@ create concrete classes for whatever the new file type would be. And change the 
 5.) We tried successfully closing files that were open and deleting files that were closed and they worked as expectedly. We also 
 tried deleting files that were open and deleting files that did not exist and they failed as expected. We opened files that we 
 created and it worked successfully. We also tried opening files that did not exist and it failed, as expected.
+
+---------------------
+This marks the end of Studio 20 and the start of studio 21
+---------------------
+
+2.) Trying to write to a directory file returns an enum saying that there was a write error
+3.) It is a good idea to use the visitor patteren when it is likely that many new file types will be added to the project in the
+future because by using the visitor pattern you wont have to declare and define as many methods as you would have to without it
+4.) 

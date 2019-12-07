@@ -150,8 +150,10 @@
     <ClCompile Include="AbstractFile.cpp" />
     <ClCompile Include="BasicDisplayVisitor.cpp" />
     <ClCompile Include="DirectoryFile.cpp" />
+    <ClCompile Include="HierFileFactory.cpp" />
     <ClCompile Include="HierFileSystem.cpp" />
     <ClCompile Include="ImageFile.cpp" />
+    <ClCompile Include="MetadataVisitor.cpp" />
     <ClCompile Include="SimpleFileFactory.cpp" />
     <ClCompile Include="SimpleFileSystem.cpp" />
     <ClCompile Include="Studio16Zachary1.cpp" />
@@ -168,8 +170,10 @@
     <ClInclude Include="BasicDisplayVisitor.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DirectoryFile.h" />
+    <ClInclude Include="HierFileFactory.h" />
     <ClInclude Include="HierFileSystem.h" />
     <ClInclude Include="ImageFile.h" />
+    <ClInclude Include="MetadataVisitor.h" />
     <ClInclude Include="SimpleFileFactory.h" />
     <ClInclude Include="SimpleFileSystem.h" />
     <ClInclude Include="TextFile.h" />

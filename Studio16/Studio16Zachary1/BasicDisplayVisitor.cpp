@@ -21,3 +21,11 @@ void BasicDisplayVisitor::visit_TextFile(TextFile* myTF) {
 		cout << myTF->getFileContents().at(i);
 	}
 }
+
+void BasicDisplayVisitor::visit_Directory(DirectoryFile* visit_dir) {
+	vector<char> contents = visit_dir->read();
+	for (size_t i = 0; i < contents.size(); i++){
+		cout << contents[i];
+	}
+	cout << endl;
+}

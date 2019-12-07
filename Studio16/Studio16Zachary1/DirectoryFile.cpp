@@ -1,4 +1,5 @@
 #include "DirectoryFile.h"
+#include "AbstractFileVisitor.h"
 #include "Common.h"
 #include <sstream>
 
@@ -27,8 +28,8 @@ string DirectoryFile::getName() {
 	return fileName;
 }
 void DirectoryFile::accept(AbstractFileVisitor* visit) {
-	if (visit != nullptr) {
-		// visit_directory(this);
+	if (visit) {
+		visit->visit_Directory(this);
 	}
 }
 int DirectoryFile::addChild(AbstractFile* child) {

@@ -8,6 +8,8 @@
 #include "SimpleFileFactory.h"
 #include "BasicDisplayVisitor.h"
 #include "HierFileSystem.h"
+#include "HierFileFactory.h"
+#include "MetadataVisitor.h"
 
 int main()
 {
@@ -180,7 +182,7 @@ int main()
 
 	// ----------------- Studio 20 below -------------------------
 
-	
+	/*
 	auto hFile = new HierFileSystem();
 	auto d1 = new DirectoryFile("d1");
 	auto d2 = new DirectoryFile("d2");
@@ -212,6 +214,36 @@ int main()
 	// hFile->closeFile(file2);
 
 	hFile->deleteFile("root/d1/check.txt");
-	hFile->deleteFile("root/d2/check.img");
+	hFile->deleteFile("root/d2/check.img"); */
+
+	// ----------------- Studio 21 below -------------------------
+
+	HierFileFactory myHFF;
+
+	auto myTxt = myHFF.createFile("myTF.txt");
+	auto myImg = myHFF.createFile("myIF.img");
+	auto myDir = myHFF.createFile("myDirectory");
+
+	myTxt->write({ 'A', 'B', 'C', 'D' });
+	myImg->write({ 'X',' ','X',' ',2});
+	myDir->write({ 'F','A','I','L' });
+	vector<char> myVecT = myTxt->read();
+	vector<char> myVecW = myImg->read();
+	vector<char> myVecD = myDir->read();
+
+	AbstractFileVisitor* disp = new BasicDisplayVisitor();
+	myTxt->accept(disp);
+	cout << endl;
+	myImg->accept(disp);
+	cout << endl;
+	myDir->accept(disp);
+
+	AbstractFileVisitor* myMDV = new MetadataVisitor();
+
+	myTxt->accept(myMDV);
+	cout << endl;
+	myImg->accept(myMDV);
+	cout << endl;
+	myDir->accept(myMDV);
 
 }
